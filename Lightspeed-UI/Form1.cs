@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lightspeed_UI.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,12 @@ namespace Lightspeed_UI
             label3.Text = "";
             label4.Text = "";
             label6.Text = "";
+
+            if (Settings.Default.autobutton5)
+            {
+                checkbox1.Checked = true;
+                button4_Click(button4, EventArgs.Empty);
+            }
 
         }
 
@@ -302,8 +309,8 @@ return
 
         private void button4_Click(object sender, EventArgs e)
         {
-            button2.PerformClick();
-            button3.PerformClick();
+            button2_Click(button4, EventArgs.Empty);
+            button3_Click(button4, EventArgs.Empty);
             label4.Text = "火箭升空";
         }
 
@@ -335,6 +342,12 @@ return
         {
             label6.Text = "命令已经复制到剪切版";
             Clipboard.SetText("taskkill / IM AutoHotkey.exe / F");
+        }
+
+        private void checkbox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.autobutton5 = checkbox1.Checked;
+            Settings.Default.Save();
         }
     }
 }

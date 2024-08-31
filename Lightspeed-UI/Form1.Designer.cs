@@ -30,26 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labely = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.labelx = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelx = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.labely = new System.Windows.Forms.Label();
+            this.checkbox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.checkbox1);
             this.panel1.Controls.Add(this.labely);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button5);
@@ -70,6 +72,97 @@
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
+            // labely
+            // 
+            this.labely.AutoSize = true;
+            this.labely.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labely.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labely.Location = new System.Drawing.Point(418, 301);
+            this.labely.Name = "labely";
+            this.labely.Size = new System.Drawing.Size(298, 187);
+            this.labely.TabIndex = 19;
+            this.labely.Text = resources.GetString("labely.Text");
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(195, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "info";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.Location = new System.Drawing.Point(22, 209);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(167, 39);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "杀掉所有 ahk 进程";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
+            this.linkLabel2.Location = new System.Drawing.Point(579, 42);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(137, 12);
+            this.linkLabel2.TabIndex = 16;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "图标优化脚本（github）";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
+            this.linkLabel1.Location = new System.Drawing.Point(579, 14);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(149, 12);
+            this.linkLabel1.TabIndex = 15;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "下载依赖 ahkv1.exe (3MB)";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // labelx
+            // 
+            this.labelx.AutoSize = true;
+            this.labelx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelx.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelx.Location = new System.Drawing.Point(19, 386);
+            this.labelx.Name = "labelx";
+            this.labelx.Size = new System.Drawing.Size(290, 85);
+            this.labelx.TabIndex = 14;
+            this.labelx.Text = "快捷键需要在鼠标点击桌面/任务栏之后，再按下触发\r\n↪\r\n启动本窗口的快捷键： ↪ Ctrl+Alt+Z \r\n打开lightspeed文件夹的快捷键：↪ Alt " +
+    "+ 0\r\n打开任何其他程序的快捷： ↪ 数字 + 文件名首字母";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(195, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "活在升空";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Location = new System.Drawing.Point(22, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(167, 39);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "生成 + 启动";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -79,6 +172,17 @@
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 11;
             this.label3.Text = "info";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(22, 119);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(167, 39);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "启动 ahk";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -122,107 +226,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // checkbox1
             // 
-            this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(22, 119);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(167, 39);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "启动 ahk";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(22, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 39);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "生成 + 启动";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(195, 178);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "info";
-            // 
-            // labelx
-            // 
-            this.labelx.AutoSize = true;
-            this.labelx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelx.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelx.Location = new System.Drawing.Point(19, 386);
-            this.labelx.Name = "labelx";
-            this.labelx.Size = new System.Drawing.Size(290, 85);
-            this.labelx.TabIndex = 14;
-            this.labelx.Text = "快捷键需要在鼠标点击桌面/任务栏之后，再按下触发\r\n↪\r\n启动本窗口的快捷键： ↪ Ctrl+Alt+Z \r\n打开lightspeed文件夹的快捷键：↪ Alt " +
-    "+ 0\r\n打开任何其他程序的快捷： ↪ 数字 + 文件名首字母";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(579, 14);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(149, 12);
-            this.linkLabel1.TabIndex = 15;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "下载依赖 ahkv1.exe (3MB)";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(579, 42);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(137, 12);
-            this.linkLabel2.TabIndex = 16;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "图标优化脚本（github）";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(195, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "info";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(22, 209);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(167, 39);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "杀掉所有 ahk 进程";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // labely
-            // 
-            this.labely.AutoSize = true;
-            this.labely.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labely.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labely.Location = new System.Drawing.Point(418, 301);
-            this.labely.Name = "labely";
-            this.labely.Size = new System.Drawing.Size(298, 187);
-            this.labely.TabIndex = 19;
-            this.labely.Text = resources.GetString("labely.Text");
+            this.checkbox1.AutoSize = true;
+            this.checkbox1.Location = new System.Drawing.Point(254, 178);
+            this.checkbox1.Name = "checkbox1";
+            this.checkbox1.Size = new System.Drawing.Size(78, 16);
+            this.checkbox1.TabIndex = 20;
+            this.checkbox1.Text = "ahk自启动";
+            this.checkbox1.UseVisualStyleBackColor = true;
+            this.checkbox1.CheckedChanged += new System.EventHandler(this.checkbox1_CheckedChanged);
             // 
             // Form1
             // 
@@ -256,6 +269,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label labely;
+        private System.Windows.Forms.CheckBox checkbox1;
     }
 }
 
