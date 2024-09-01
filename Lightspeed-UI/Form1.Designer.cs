@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkbox1 = new System.Windows.Forms.CheckBox();
             this.labely = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -44,13 +45,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkbox1 = new System.Windows.Forms.CheckBox();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.linkLabel3);
             this.panel1.Controls.Add(this.checkbox1);
             this.panel1.Controls.Add(this.labely);
             this.panel1.Controls.Add(this.label6);
@@ -66,20 +68,32 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(89, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 497);
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
+            // checkbox1
+            // 
+            this.checkbox1.AutoSize = true;
+            this.checkbox1.Location = new System.Drawing.Point(254, 177);
+            this.checkbox1.Name = "checkbox1";
+            this.checkbox1.Size = new System.Drawing.Size(78, 16);
+            this.checkbox1.TabIndex = 20;
+            this.checkbox1.Text = "ahk自启动";
+            this.checkbox1.UseVisualStyleBackColor = true;
+            this.checkbox1.CheckedChanged += new System.EventHandler(this.checkbox1_CheckedChanged);
+            // 
             // labely
             // 
             this.labely.AutoSize = true;
-            this.labely.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labely.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labely.Location = new System.Drawing.Point(418, 301);
+            this.labely.Font = new System.Drawing.Font("微软雅黑", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labely.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.labely.Location = new System.Drawing.Point(489, 334);
             this.labely.Name = "labely";
-            this.labely.Size = new System.Drawing.Size(298, 187);
+            this.labely.Size = new System.Drawing.Size(239, 154);
             this.labely.TabIndex = 19;
             this.labely.Text = resources.GetString("labely.Text");
             // 
@@ -109,19 +123,19 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(579, 42);
+            this.linkLabel2.Location = new System.Drawing.Point(32, 325);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(137, 12);
+            this.linkLabel2.Size = new System.Drawing.Size(77, 12);
             this.linkLabel2.TabIndex = 16;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "图标优化脚本（github）";
+            this.linkLabel2.Text = "图标优化脚本";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(579, 14);
+            this.linkLabel1.Location = new System.Drawing.Point(30, 281);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(149, 12);
             this.linkLabel1.TabIndex = 15;
@@ -226,16 +240,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkbox1
+            // linkLabel3
             // 
-            this.checkbox1.AutoSize = true;
-            this.checkbox1.Location = new System.Drawing.Point(254, 178);
-            this.checkbox1.Name = "checkbox1";
-            this.checkbox1.Size = new System.Drawing.Size(78, 16);
-            this.checkbox1.TabIndex = 20;
-            this.checkbox1.Text = "ahk自启动";
-            this.checkbox1.UseVisualStyleBackColor = true;
-            this.checkbox1.CheckedChanged += new System.EventHandler(this.checkbox1_CheckedChanged);
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkColor = System.Drawing.SystemColors.WindowFrame;
+            this.linkLabel3.Location = new System.Drawing.Point(32, 303);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(101, 12);
+            this.linkLabel3.TabIndex = 21;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "贴边自动隐藏工具";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // Form1
             // 
@@ -270,6 +285,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label labely;
         private System.Windows.Forms.CheckBox checkbox1;
+        private System.Windows.Forms.LinkLabel linkLabel3;
     }
 }
 

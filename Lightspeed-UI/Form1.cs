@@ -38,6 +38,14 @@ namespace Lightspeed_UI
                 button4_Click(button4, EventArgs.Empty);
             }
 
+            if (!Directory.Exists("c:/lightspeed"))
+            {
+                OpenSettings(button4, EventArgs.Empty);
+                label1.Text = "第一次使用,需要建立文件夹 C:/lightspeed,点击左边按钮创建 ";
+                label1.ForeColor = Color.Red;
+
+            }
+
         }
 
         private void InitializeUI()
@@ -84,7 +92,7 @@ namespace Lightspeed_UI
             };
             btn_last.FlatStyle = FlatStyle.Flat;  // 扁平样式
             btn_last.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);  // 边框颜色
-            btn_last.Click += CreateLightspeedFloder; // 添加按钮点击事件处理程序
+            btn_last.Click += OpenSettings; // 添加按钮点击事件处理程序
             buttonPanel.Controls.Add(btn_last);
 
             // 创建 WebBrowser 控件
@@ -116,7 +124,7 @@ namespace Lightspeed_UI
             webBrowser.Navigate($"file://C:/lightspeed/{number}");
         }
 
-        private void CreateLightspeedFloder(object sender, EventArgs e)
+        private void OpenSettings(object sender, EventArgs e)
         {
             //var b = new Form2();
             //b.Show();
@@ -348,6 +356,17 @@ return
         {
             Settings.Default.autobutton5 = checkbox1.Checked;
             Settings.Default.Save();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+        
+            string url = "https://kasusa.lanzoul.com/ix6FC28v6xyf";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
         }
     }
 }
