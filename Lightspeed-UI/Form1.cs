@@ -110,6 +110,18 @@ namespace Lightspeed_UI
 
             // 设置初始页面
             webBrowser.Navigate("file://C:/lightspeed/0");
+            webBrowser.PreviewKeyDown += WebBrowserKeyFunction;
+        }
+        private void WebBrowserKeyFunction(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                if (webBrowser.CanGoBack)
+                {
+                    webBrowser.GoBack();
+                    webBrowser.Focus();
+                }
+            }
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -228,7 +240,7 @@ open_or_activate(""C:\lightspeed"",""C:\lightspeed"")
 return
 ";
 
-            ahkContent += $"^!z::open_or_activate(\"lightspeed-UI\",\"{Assembly.GetExecutingAssembly().Location}\")" +"\n";
+            ahkContent += $"^!z::open_or_activate(\"lightspeed-UI\",\"{Assembly.GetExecutingAssembly().Location}\")" + "\n";
 
             var lightspeed_obj_list = LoadFolder2objList(folderPath);
             foreach (var item in lightspeed_obj_list)
@@ -343,7 +355,7 @@ return
                 FileName = url,
                 UseShellExecute = true
             });
-        
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -360,7 +372,7 @@ return
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-        
+
             string url = "https://kasusa.lanzoul.com/ix6FC28v6xyf";
             Process.Start(new ProcessStartInfo
             {
