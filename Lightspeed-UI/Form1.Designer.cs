@@ -160,12 +160,13 @@
             this.labelx.AutoSize = true;
             this.labelx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelx.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelx.Location = new System.Drawing.Point(19, 386);
+            this.labelx.Location = new System.Drawing.Point(19, 371);
             this.labelx.Name = "labelx";
-            this.labelx.Size = new System.Drawing.Size(290, 85);
+            this.labelx.Size = new System.Drawing.Size(290, 102);
             this.labelx.TabIndex = 14;
             this.labelx.Text = "快捷键需要在鼠标点击桌面/任务栏之后，再按下触发\r\n↪\r\n启动本窗口的快捷键： ↪ Ctrl+Alt+Z \r\n打开lightspeed文件夹的快捷键：↪ Alt " +
-    "+ 0\r\n打开任何其他程序的快捷： ↪ 数字 + 文件名首字母";
+    "+ 0\r\n打开任何其他程序的快捷： ↪ 数字 + 文件名首字母\r\n窗口导航：↪ Alt + 左右方向键";
+            this.labelx.Click += new System.EventHandler(this.labelx_Click);
             // 
             // label4
             // 

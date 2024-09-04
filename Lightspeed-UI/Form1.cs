@@ -114,13 +114,23 @@ namespace Lightspeed_UI
         }
         private void WebBrowserKeyFunction(object sender, PreviewKeyDownEventArgs e)
         {
-            if (e.KeyCode == Keys.Back)
+            if (e.Alt == true &&  e.KeyCode == Keys.Left)
             {
                 if (webBrowser.CanGoBack)
                 {
                     webBrowser.GoBack();
                     webBrowser.Focus();
                 }
+                
+            }
+            if (e.Alt == true && e.KeyCode == Keys.Right)
+            {
+                if (webBrowser.CanGoForward)
+                {
+                    webBrowser.GoForward();
+                    webBrowser.Focus();
+                }
+
             }
         }
 
@@ -379,6 +389,11 @@ return
                 FileName = url,
                 UseShellExecute = true
             });
+        }
+
+        private void labelx_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
