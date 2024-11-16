@@ -19,13 +19,15 @@ namespace Lightspeed_UI
     public partial class Form1 : Form
     {
         private WebBrowser webBrowser;
+        // 顶部间距
+        public int tophieght = 56;
 
         public Form1()
         {
             InitializeComponent();
             InitializeUI();
-            this.Width = 850;
-            this.Height = 545;
+            this.Width = 450;
+            this.Height = 545 + tophieght;
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
@@ -70,7 +72,7 @@ namespace Lightspeed_UI
                     Tag = i,  // 将按钮的 Tag 设置为数字，用于点击事件中获取
                     Width = 90,
                     Height = 40,
-                    Top = i * 45 + 10, // 设置按钮的垂直位置
+                    Top = i * 45 + tophieght, // 设置按钮的垂直位置
                     Left = 5,
                     BackColor = Color.FromArgb(45, 45, 45), // 深灰色背景
                     ForeColor = Color.White  // 白色字体
@@ -85,7 +87,7 @@ namespace Lightspeed_UI
                 Text = "settings",
                 Width = 90,
                 Height = 40,
-                Top = 450 + 10, // 设置按钮的垂直位置
+                Top = 450 + tophieght, // 设置按钮的垂直位置
                 Left = 5,
                 BackColor = Color.FromArgb(45, 45, 45), // 深灰色背景
                 ForeColor = Color.White  // 白色字体
@@ -111,10 +113,11 @@ namespace Lightspeed_UI
             // 设置初始页面
             webBrowser.Navigate("file://C:/lightspeed/0");
             webBrowser.PreviewKeyDown += WebBrowserKeyFunction;
+            
         }
         private void WebBrowserKeyFunction(object sender, PreviewKeyDownEventArgs e)
         {
-            if (e.Alt == true &&  e.KeyCode == Keys.Left)
+            if ((e.Alt == true &&  e.KeyCode == Keys.Left) )
             {
                 if (webBrowser.CanGoBack)
                 {
@@ -123,7 +126,7 @@ namespace Lightspeed_UI
                 }
                 
             }
-            if (e.Alt == true && e.KeyCode == Keys.Right)
+            if ((e.Alt == true && e.KeyCode == Keys.Right))
             {
                 if (webBrowser.CanGoForward)
                 {
@@ -136,6 +139,8 @@ namespace Lightspeed_UI
 
         private void Btn_Click(object sender, EventArgs e)
         {
+            webBrowser.Visible = true;
+
             // 获取被点击按钮的 Tag 值
             Button clickedButton = sender as Button;
             int number = (int)clickedButton.Tag;
@@ -148,19 +153,26 @@ namespace Lightspeed_UI
 
         private void OpenSettings(object sender, EventArgs e)
         {
+
             //var b = new Form2();
             //b.Show();
             if (!panel1.Visible)
             {
+                //min 460x590
+                //this.Width = Math.Max(460+120, Width);
+                this.Height = Math.Max(590, Height);
                 panel1.Visible = true;
                 panel1.Top = webBrowser.Top;
                 panel1.Height = webBrowser.Height;
                 panel1.Left = webBrowser.Left;
                 panel1.Width = webBrowser.Width;
+                webBrowser.Visible = false;
             }
             else
             {
                 panel1.Visible = false;
+                webBrowser.Visible = true;
+
             }
         }
 
@@ -394,6 +406,39 @@ return
         private void labelx_Click(object sender, EventArgs e)
         {
 
+        }
+        //back
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (webBrowser.CanGoBack)
+            {
+                webBrowser.GoBack();
+                webBrowser.Focus();
+            }
+        }
+        //forward
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (webBrowser.CanGoForward)
+            {
+                webBrowser.GoForward();
+                webBrowser.Focus();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        //big
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Width = 850;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Width = 450;
         }
     }
 }
