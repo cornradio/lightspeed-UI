@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(248, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 590);
             this.panel1.TabIndex = 0;
@@ -98,7 +98,7 @@
             // 
             this.checkbox1.AutoSize = true;
             this.checkbox1.Location = new System.Drawing.Point(80, 229);
-            this.checkbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkbox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkbox1.Name = "checkbox1";
             this.checkbox1.Size = new System.Drawing.Size(98, 19);
             this.checkbox1.TabIndex = 20;
@@ -122,7 +122,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button5.Location = new System.Drawing.Point(12, 248);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(223, 49);
             this.button5.TabIndex = 17;
@@ -186,7 +186,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button4.Location = new System.Drawing.Point(12, 178);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(223, 49);
             this.button4.TabIndex = 12;
@@ -209,7 +209,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button3.Location = new System.Drawing.Point(12, 122);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(223, 49);
             this.button3.TabIndex = 10;
@@ -232,7 +232,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.Location = new System.Drawing.Point(12, 65);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(223, 49);
             this.button2.TabIndex = 8;
@@ -255,7 +255,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Location = new System.Drawing.Point(12, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(223, 49);
             this.button1.TabIndex = 6;
@@ -269,7 +269,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button6.ForeColor = System.Drawing.Color.Lime;
+            this.button6.ForeColor = System.Drawing.Color.LightGray;
             this.button6.Location = new System.Drawing.Point(0, -1);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(50, 25);
@@ -285,7 +285,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button7.ForeColor = System.Drawing.Color.Lime;
+            this.button7.ForeColor = System.Drawing.Color.LightGray;
             this.button7.Location = new System.Drawing.Point(49, -1);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(50, 25);
@@ -301,7 +301,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button8.ForeColor = System.Drawing.Color.Aqua;
+            this.button8.ForeColor = System.Drawing.Color.MintCream;
             this.button8.Location = new System.Drawing.Point(0, 22);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 25);
@@ -317,7 +317,7 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button9.ForeColor = System.Drawing.Color.Aqua;
+            this.button9.ForeColor = System.Drawing.Color.MintCream;
             this.button9.Location = new System.Drawing.Point(49, 22);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(50, 25);
@@ -338,7 +338,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "lightspeed-UI";
             this.Load += new System.EventHandler(this.Form1_Load);

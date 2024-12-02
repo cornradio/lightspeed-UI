@@ -19,6 +19,7 @@ namespace Lightspeed_UI
     public partial class Form1 : Form
     {
         private WebBrowser webBrowser;
+        Panel buttonPanel;
         // 顶部间距
         public int tophieght = 56;
 
@@ -56,7 +57,7 @@ namespace Lightspeed_UI
             this.BackColor = Color.Black;
 
             // 创建一个 Panel 用于放置按钮，并设置为黑色背景
-            Panel buttonPanel = new Panel
+            buttonPanel = new Panel
             {
                 Dock = DockStyle.Left,
                 Width = 100,
@@ -135,6 +136,12 @@ namespace Lightspeed_UI
                 }
 
             }
+            if ((e.KeyCode == Keys.F5))//按一下 f5刷新 ahk 重启一下
+            {
+                MessageBox.Show("lightspeed.ahk 已刷新");
+                button4_Click(button4, EventArgs.Empty);
+            }
+
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -143,12 +150,39 @@ namespace Lightspeed_UI
 
             // 获取被点击按钮的 Tag 值
             Button clickedButton = sender as Button;
+            //更新按钮颜色
+            buttonRefreshColor(clickedButton);
             int number = (int)clickedButton.Tag;
             // 如果正在开启设置页面,关闭
             panel1.Visible = false;
 
             // 更新 WebBrowser 控件的 URI
             webBrowser.Navigate($"file://C:/lightspeed/{number}");
+        }
+
+        private void buttonRefreshColor(Button clickedButton)
+        {
+            //帮我完成这个函数
+            //要求 传入的这个btn clickedButton.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 64);  
+            //其他的所有 button FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            // 遍历 Panel 中的所有按钮
+            foreach (Control ctrl in buttonPanel.Controls)
+            {
+                // 检查控件是否是按钮
+                if (ctrl is Button btn)
+                {
+                    // 如果当前按钮是被点击的按钮，设置边框颜色为黄色
+                    if (btn == clickedButton)
+                    {
+                        btn.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 64);  // 设置为黄色
+                    }
+                    else
+                    {
+                        // 否则，设置为灰色边框
+                        btn.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);  // 设置为灰色
+                    }
+                }
+            }
         }
 
         private void OpenSettings(object sender, EventArgs e)
@@ -253,12 +287,12 @@ open_or_activate(title, path) {
     if (WinExist(title)) {
         WinActivate, %title%
     } else {
-        Run, %path%
-    }
+        Run, ""%path%""
+        }
 }
 
 !0::
-open_or_activate(""C:\lightspeed"",""C:\lightspeed"")
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\0"")
 return
 ";
 
@@ -439,6 +473,12 @@ return
         private void button9_Click(object sender, EventArgs e)
         {
             this.Width = 450;
+        }
+
+
+        private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
         }
     }
 }
