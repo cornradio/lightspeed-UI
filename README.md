@@ -15,4 +15,5 @@ windows quick launcher written in c# + using ahk for key binding
 lightspeed文件夹快捷键：↪ Alt + 0  
 打开程序的快捷： ↪ 数字 + 首字母  
 窗口导航：↪ Alt + 左右方向键  
-刷新快捷键： F5
+刷新快捷键： F5  
+右键 - v - M 可以设置成大图标模式
