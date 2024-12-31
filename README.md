@@ -17,3 +17,6 @@ lightspeed文件夹快捷键：↪ Alt + 0
 窗口导航：↪ Alt + 左右方向键  
 刷新快捷键： F5  
 右键 - v - M 可以设置成大图标模式
+
+## 同类软件推荐
+https://github.com/Nigh/ahko
