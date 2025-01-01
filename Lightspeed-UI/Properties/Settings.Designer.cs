@@ -34,5 +34,17 @@ namespace Lightspeed_UI.Properties {
                 this["autobutton5"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double opicity {
+            get {
+                return ((double)(this["opicity"]));
+            }
+            set {
+                this["opicity"] = value;
+            }
+        }
     }
 }
