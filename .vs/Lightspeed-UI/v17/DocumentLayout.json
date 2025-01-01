@@ -14,7 +14,7 @@
       "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
@@ -53,8 +53,7 @@
               "RelativeToolTip": "Lightspeed-UI\\app.manifest",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwDQAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-01-01T04:06:39.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-01T04:06:39.646Z"
             },
             {
               "$type": "Document",
@@ -65,8 +64,7 @@
               "ToolTip": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Form1.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "Lightspeed-UI\\Form1.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T03:36:35.435Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2025-01-01T03:36:35.435Z"
             },
             {
               "$type": "Document",
@@ -78,8 +76,7 @@
               "RelativeToolTip": "Lightspeed-UI\\Form1.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAkwJUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T03:03:13.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-01T03:03:13.333Z"
             }
           ]
         }
