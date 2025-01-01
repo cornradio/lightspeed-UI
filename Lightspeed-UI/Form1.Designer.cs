@@ -97,7 +97,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(23, 259);
+            this.trackBar1.Location = new System.Drawing.Point(18, 344);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
@@ -123,7 +123,7 @@
             // checkbox1
             // 
             this.checkbox1.AutoSize = true;
-            this.checkbox1.Location = new System.Drawing.Point(23, 222);
+            this.checkbox1.Location = new System.Drawing.Point(18, 307);
             this.checkbox1.Margin = new System.Windows.Forms.Padding(6);
             this.checkbox1.Name = "checkbox1";
             this.checkbox1.Size = new System.Drawing.Size(150, 28);
@@ -136,7 +136,7 @@
             // 
             this.label_opacity.AutoSize = true;
             this.label_opacity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_opacity.Location = new System.Drawing.Point(223, 269);
+            this.label_opacity.Location = new System.Drawing.Point(218, 354);
             this.label_opacity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label_opacity.Name = "label_opacity";
             this.label_opacity.Size = new System.Drawing.Size(94, 24);
@@ -173,7 +173,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(180, 179);
+            this.label4.Location = new System.Drawing.Point(218, 254);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 24);
@@ -184,10 +184,10 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(23, 170);
+            this.button4.Location = new System.Drawing.Point(18, 235);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 40);
+            this.button4.Size = new System.Drawing.Size(188, 60);
             this.button4.TabIndex = 12;
             this.button4.Text = "生成 + 启动";
             this.button4.UseVisualStyleBackColor = false;
@@ -197,7 +197,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(180, 127);
+            this.label3.Location = new System.Drawing.Point(218, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 24);
@@ -207,10 +207,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(18, 118);
+            this.button3.Location = new System.Drawing.Point(18, 163);
             this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 40);
+            this.button3.Size = new System.Drawing.Size(188, 60);
             this.button3.TabIndex = 10;
             this.button3.Text = "启动 ahk";
             this.button3.UseVisualStyleBackColor = true;
@@ -220,7 +220,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(180, 75);
+            this.label2.Location = new System.Drawing.Point(218, 110);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 24);
@@ -230,10 +230,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(18, 66);
+            this.button2.Location = new System.Drawing.Point(18, 91);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 40);
+            this.button2.Size = new System.Drawing.Size(188, 60);
             this.button2.TabIndex = 8;
             this.button2.Text = "生成 ahk";
             this.button2.UseVisualStyleBackColor = true;
@@ -243,7 +243,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(180, 23);
+            this.label1.Location = new System.Drawing.Point(218, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 24);
@@ -253,10 +253,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(18, 14);
+            this.button1.Location = new System.Drawing.Point(18, 23);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 40);
+            this.button1.Size = new System.Drawing.Size(188, 60);
             this.button1.TabIndex = 6;
             this.button1.Text = "创建文件夹";
             this.button1.UseVisualStyleBackColor = true;

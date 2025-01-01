@@ -48,6 +48,7 @@ namespace Lightspeed_UI
 
             }
 
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -146,9 +147,8 @@ namespace Lightspeed_UI
 
             // 设置初始页面
             webBrowser.Navigate("file://C:/lightspeed/0");
-            webBrowser.PreviewKeyDown += WebBrowserKeyFunction;
-            
-        }
+            this.PreviewKeyDown += WebBrowserKeyFunction;
+         }
         private void WebBrowserKeyFunction(object sender, PreviewKeyDownEventArgs e)
         {
             if ((e.Alt == true &&  e.KeyCode == Keys.Left) )
@@ -156,7 +156,6 @@ namespace Lightspeed_UI
                 if (webBrowser.CanGoBack)
                 {
                     webBrowser.GoBack();
-                    webBrowser.Focus();
                 }
                 
             }
@@ -165,7 +164,6 @@ namespace Lightspeed_UI
                 if (webBrowser.CanGoForward)
                 {
                     webBrowser.GoForward();
-                    webBrowser.Focus();
                 }
 
             }
@@ -176,6 +174,7 @@ namespace Lightspeed_UI
             }
 
         }
+
 
         private void Btn_Click(object sender, EventArgs e)
         {
@@ -282,6 +281,9 @@ namespace Lightspeed_UI
             // AHK script content
             string ahkContent = @"
 #SingleInstance , Force
+#If  WinActive(""ahk_exe lightspeed-UI.exe"") 
+XButton1::Send, {alt down}{Left}{alt up}
+XButton2::Send, {alt down}{right}{alt up}
 #If WinActive(""ahk_class Shell_TrayWnd"") or WinActive(""ahk_class Shell_SecondaryTrayWnd"") or WinActive(""python  lightspeed.py"") or WinActive(""ahk_class WorkerW"")  or WinActive(""ahk_class Progman"")
 SetTitleMatchMode, 2
 
