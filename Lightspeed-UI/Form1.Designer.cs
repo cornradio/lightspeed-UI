@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.checkbox1 = new System.Windows.Forms.CheckBox();
             this.label_opacity = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -76,17 +76,42 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(372, 21);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 944);
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.LinkColor = System.Drawing.SystemColors.WindowFrame;
+            this.linkLabel4.Location = new System.Drawing.Point(14, 584);
+            this.linkLabel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(274, 24);
+            this.linkLabel4.TabIndex = 23;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "使用帮助和更新 github ";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(23, 259);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = 50;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(204, 90);
+            this.trackBar1.TabIndex = 22;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Value = 50;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel3.Location = new System.Drawing.Point(19, 407);
+            this.linkLabel3.Location = new System.Drawing.Point(14, 501);
             this.linkLabel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(370, 24);
@@ -99,7 +124,7 @@
             // 
             this.checkbox1.AutoSize = true;
             this.checkbox1.Location = new System.Drawing.Point(23, 222);
-            this.checkbox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.checkbox1.Margin = new System.Windows.Forms.Padding(6);
             this.checkbox1.Name = "checkbox1";
             this.checkbox1.Size = new System.Drawing.Size(150, 28);
             this.checkbox1.TabIndex = 20;
@@ -122,7 +147,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(19, 450);
+            this.linkLabel2.Location = new System.Drawing.Point(14, 544);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(154, 24);
@@ -135,7 +160,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(19, 362);
+            this.linkLabel1.Location = new System.Drawing.Point(14, 456);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(298, 24);
@@ -160,7 +185,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button4.Location = new System.Drawing.Point(23, 170);
-            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 40);
             this.button4.TabIndex = 12;
@@ -183,7 +208,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button3.Location = new System.Drawing.Point(18, 118);
-            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 40);
             this.button3.TabIndex = 10;
@@ -206,7 +231,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.Location = new System.Drawing.Point(18, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 40);
             this.button2.TabIndex = 8;
@@ -229,7 +254,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Location = new System.Drawing.Point(18, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 6;
@@ -309,31 +334,6 @@
             this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(23, 259);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Minimum = 50;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(204, 90);
-            this.trackBar1.TabIndex = 22;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 50;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel4.Location = new System.Drawing.Point(19, 490);
-            this.linkLabel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(142, 24);
-            this.linkLabel4.TabIndex = 23;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "github 更新";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -345,7 +345,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "lightspeed-UI";
             this.Load += new System.EventHandler(this.Form1_Load);
