@@ -27,13 +27,12 @@ namespace Lightspeed_UI
         {
             InitializeComponent();
             InitializeUI();
-            this.Width = 450;
+            this.Width = 410;
             this.Height = 545 + tophieght;
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
             label4.Text = "";
-            label6.Text = "";
 
             if (Settings.Default.autobutton5)
             {
@@ -50,7 +49,10 @@ namespace Lightspeed_UI
             }
 
         }
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Opacity = Settings.Default.opicity;
+        }
         private void InitializeUI()
         {
             // 设置窗体的黑色背景
@@ -63,6 +65,37 @@ namespace Lightspeed_UI
                 Width = 100,
                 BackColor = Color.FromArgb(30, 30, 30)  // 深灰色背景
             };
+
+            // 添加向上一级按钮
+            Button backButton = new Button
+            {
+                Text = " < ",
+                Width = 45,
+                Height = 40,
+                Top = 10,
+                Left = 5,
+                BackColor = Color.FromArgb(45, 45, 45), // 深灰色背景
+                ForeColor = Color.White  // 白色字体
+            };
+            backButton.FlatStyle = FlatStyle.Flat;  // 扁平样式
+            backButton.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);  // 边框颜色
+            backButton.Click += button6_Click; // 添加按钮点击事件处理程序
+            buttonPanel.Controls.Add(backButton);
+            // 添加向下一级级按钮
+            Button forwardButton = new Button
+            {
+                Text = " > ",
+                Width = 45,
+                Height = 40,
+                Top = 10,
+                Left = 50,
+                BackColor = Color.FromArgb(45, 45, 45), // 深灰色背景
+                ForeColor = Color.White  // 白色字体
+            };
+            forwardButton.FlatStyle = FlatStyle.Flat;  // 扁平样式
+            forwardButton.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);  // 边框颜色
+            forwardButton.Click += button7_Click; // 添加按钮点击事件处理程序
+            buttonPanel.Controls.Add(forwardButton);
 
             // 创建 10 个按钮，并设置为黑色背景和白色字体
             for (int i = 0; i <= 9; i++)
@@ -215,27 +248,19 @@ namespace Lightspeed_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 定义主文件夹路径
             string baseFolderPath = @"c:/lightspeed";
-
-            // 检查主文件夹是否存在
             if (!Directory.Exists(baseFolderPath))
             {
-                // 如果主文件夹不存在，创建它
                 Directory.CreateDirectory(baseFolderPath);
-                // 创建 10 个子文件夹
                 for (int i = 0; i < 10; i++)
                 {
                     string folderPath = Path.Combine(baseFolderPath, i.ToString());
-
-                    // 如果子文件夹不存在，创建它
                     if (!Directory.Exists(folderPath))
                     {
                         Directory.CreateDirectory(folderPath);
                     }
                 }
                 label1.Text = ("文件夹创建完成！");
-
             }
             else
             {
@@ -414,12 +439,6 @@ return
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            label6.Text = "命令已经复制到剪切版";
-            Clipboard.SetText("taskkill / IM AutoHotkey.exe / F");
-        }
-
         private void checkbox1_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.autobutton5 = checkbox1.Checked;
@@ -460,10 +479,7 @@ return
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
         //big
         private void button8_Click(object sender, EventArgs e)
         {
@@ -479,6 +495,24 @@ return
         private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
 
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://github.com/cornradio/lightspeed-UI";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.Opacity = trackBar1.Value/100.00;
+            label_opacity.Text = trackBar1.Value.ToString();
+            Settings.Default.opicity = this.Opacity;
+            Settings.Default.Save();
         }
     }
 }
