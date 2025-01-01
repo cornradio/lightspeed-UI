@@ -3,16 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Lightspeed-UI||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,6 +34,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Lightspeed-UI",
+              "DocumentMoniker": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Lightspeed-UI.csproj",
+              "RelativeDocumentMoniker": "Lightspeed-UI\\Lightspeed-UI.csproj",
+              "ToolTip": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Lightspeed-UI.csproj",
+              "RelativeToolTip": "Lightspeed-UI\\Lightspeed-UI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-01T04:22:09.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "app.manifest",
               "DocumentMoniker": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\app.manifest",
               "RelativeDocumentMoniker": "Lightspeed-UI\\app.manifest",
@@ -39,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Form1.cs",
               "RelativeDocumentMoniker": "Lightspeed-UI\\Form1.cs",
@@ -51,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Form1.cs",
               "RelativeDocumentMoniker": "Lightspeed-UI\\Form1.cs",
