@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lightspeed-UI", "Lightspeed-UI.csproj", "{204EC564-3720-4731-BF44-03EBB7DD9F9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{204EC564-3720-4731-BF44-03EBB7DD9F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204EC564-3720-4731-BF44-03EBB7DD9F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204EC564-3720-4731-BF44-03EBB7DD9F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204EC564-3720-4731-BF44-03EBB7DD9F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEAED58A-6F58-4E6B-B350-34E934C4C7CA}
+	EndGlobalSection
+EndGlobal

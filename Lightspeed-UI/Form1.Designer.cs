@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(372, 21);
+            this.panel1.Location = new System.Drawing.Point(180, 15);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 944);
@@ -101,7 +101,7 @@
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(204, 90);
+            this.trackBar1.Size = new System.Drawing.Size(204, 45);
             this.trackBar1.TabIndex = 22;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 50;
@@ -126,7 +126,7 @@
             this.checkbox1.Location = new System.Drawing.Point(18, 307);
             this.checkbox1.Margin = new System.Windows.Forms.Padding(6);
             this.checkbox1.Name = "checkbox1";
-            this.checkbox1.Size = new System.Drawing.Size(150, 28);
+            this.checkbox1.Size = new System.Drawing.Size(137, 28);
             this.checkbox1.TabIndex = 20;
             this.checkbox1.Text = "ahk自启动";
             this.checkbox1.UseVisualStyleBackColor = true;
@@ -346,8 +346,11 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "lightspeed-UI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

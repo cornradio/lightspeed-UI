@@ -148,6 +148,7 @@ namespace Lightspeed_UI
             // 设置初始页面
             webBrowser.Navigate("file://C:/lightspeed/0");
             this.PreviewKeyDown += WebBrowserKeyFunction;
+            webBrowser.PreviewKeyDown += WebBrowserKeyFunction;
          }
         private void WebBrowserKeyFunction(object sender, PreviewKeyDownEventArgs e)
         {
@@ -515,6 +516,27 @@ return
             label_opacity.Text = trackBar1.Value.ToString();
             Settings.Default.opicity = this.Opacity;
             Settings.Default.Save();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 判断窗体关闭原因是否是用户点击关闭按钮
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // 检查是否按住 Shift 键
+                if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+                {
+                    // 按住 Shift 键时，允许关闭窗体
+                    e.Cancel = false;
+                }
+                else
+                {
+                    // 取消关闭操作
+                    e.Cancel = true;
+                    // 将窗体最小化
+                    this.WindowState = FormWindowState.Minimized;
+                }
+            }
         }
     }
 }
