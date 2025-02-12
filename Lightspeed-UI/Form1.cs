@@ -282,6 +282,7 @@ namespace Lightspeed_UI
             // AHK script content
             string ahkContent = @"
 #SingleInstance , Force
+Menu, Tray, Icon, netshell.dll, 30 
 #If  WinActive(""ahk_exe lightspeed-UI.exe"") 
 XButton1::Send, {alt down}{Left}{alt up}
 XButton2::Send, {alt down}{right}{alt up}
