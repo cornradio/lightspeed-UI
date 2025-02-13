@@ -13,11 +13,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Lightspeed_UI
-{
+{ 
     public partial class Form1 : Form
     {
+        private Timer checkMouseTimer; // 定时器检查鼠标位置
+        private Timer animationTimer;  // 用于动画
+        private bool isHidden = false; // 记录窗口是否隐藏
+        private bool isAnimating = false; // 记录是否在执行动画
+        private int hiddenY;  // 窗口隐藏时的 Y 坐标
+        private int visibleY; // 窗口可见时的 Y 坐标
+        private int animationSpeed = 50; // 每次动画移动的像素
+
         private WebBrowser webBrowser;
         Panel buttonPanel;
         // 顶部间距
@@ -27,13 +36,27 @@ namespace Lightspeed_UI
         {
             InitializeComponent();
             InitializeUI();
+
+            visibleY = 0;
+            hiddenY = -this.Height + 5; // 让窗口只露出一点点
+
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, visibleY);
+
+            checkMouseTimer = new Timer();
+            checkMouseTimer.Interval = 100;
+            checkMouseTimer.Tick += CheckMousePosition;
+            checkMouseTimer.Start();
+
+            animationTimer = new Timer();
+            animationTimer.Interval = 10; // 10ms 刷新一次动画
+            animationTimer.Tick += AnimateWindow;
+
             this.Width = 410;
             this.Height = 545 + tophieght;
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
             label4.Text = "";
-
             if (Settings.Default.autobutton5)
             {
                 checkbox1.Checked = true;
@@ -47,9 +70,50 @@ namespace Lightspeed_UI
                 label1.ForeColor = Color.Red;
 
             }
-
-
         }
+
+        private void CheckMousePosition(object sender, EventArgs e)
+        {
+            Point cursorPos = Cursor.Position;
+
+            bool isAtTopEdge = cursorPos.Y <= 5; // 鼠标是否靠近顶部
+            bool isOnForm = this.Bounds.Contains(cursorPos); // 鼠标是否在窗口上
+
+            if (!isHidden && this.Top <= 0 && !isOnForm)
+            {
+                hiddenY = -this.Height + 5; // 让窗口收起时仅露出 5 像素
+                StartAnimation(hiddenY); // 隐藏窗口
+            }
+            else if (isHidden && (isAtTopEdge || isOnForm))
+            {
+                StartAnimation(visibleY); // 显示窗口
+            }
+        }
+
+        private void StartAnimation(int targetY)
+        {
+            if (isAnimating) return;
+
+            isAnimating = true;
+            animationTimer.Tag = targetY;
+            animationTimer.Start();
+        }
+
+        private void AnimateWindow(object sender, EventArgs e)
+        {
+            int targetY = (int)animationTimer.Tag;
+            if (this.Top < targetY)
+                this.Top = Math.Min(this.Top + animationSpeed, targetY);
+            else if (this.Top > targetY)
+                this.Top = Math.Max(this.Top - animationSpeed, targetY);
+            else
+            {
+                animationTimer.Stop();
+                isAnimating = false;
+                isHidden = (this.Top == hiddenY);
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Opacity = Settings.Default.opicity;
