@@ -37,10 +37,25 @@ namespace Lightspeed_UI
             InitializeComponent();
             InitializeUI();
 
-            visibleY = 0;
-            hiddenY = -this.Height + 5; // 让窗口只露出一点点
+            // 添加事件处理程序
+            this.LocationChanged += Form1_LocationChanged;
 
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, visibleY);
+            // 从设置中加载上次的窗口位置和大小
+            this.Width = 410;
+            this.Height = 545 + tophieght;
+
+            // 从设置中加载位置，如果有的话
+            if (Settings.Default.WindowLeft != -1 && Settings.Default.WindowTop != -1)
+            {
+                this.Location = new Point(Settings.Default.WindowLeft, Settings.Default.WindowTop);
+            }
+            else
+            {
+                this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, visibleY);
+            }
+
+            visibleY = this.Top;
+            hiddenY = -this.Height + 5;
 
             checkMouseTimer = new Timer();
             checkMouseTimer.Interval = 100;
@@ -51,8 +66,6 @@ namespace Lightspeed_UI
             animationTimer.Interval = 10; // 10ms 刷新一次动画
             animationTimer.Tick += AnimateWindow;
 
-            this.Width = 410;
-            this.Height = 545 + tophieght;
             label1.Text = "";
             label2.Text = "";
             label3.Text = "";
@@ -76,9 +89,9 @@ namespace Lightspeed_UI
         {
             Point cursorPos = Cursor.Position;
 
-            // 计算窗口水平范围
-            int formLeft = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
-            int formRight = formLeft + this.Width;
+            // 使用窗口自身的水平范围作为触发区域
+            int formLeft = this.Left;
+            int formRight = this.Left + this.Width;
 
             // 检查鼠标是否在窗口的水平范围内且靠近顶部
             bool isAtTopEdge = cursorPos.Y <= 5 && cursorPos.X >= formLeft && cursorPos.X <= formRight;
@@ -594,6 +607,14 @@ return
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // 保存窗口位置和大小
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                Settings.Default.WindowLeft = this.Left;
+                Settings.Default.WindowTop = this.Top;
+                Settings.Default.Save();
+            }
+
             // 判断窗体关闭原因是否是用户点击关闭按钮
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -612,5 +633,17 @@ return
                 }
             }
         }
+
+        private void Form1_LocationChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                Settings.Default.WindowLeft = this.Left;
+                Settings.Default.WindowTop = this.Top;
+                Settings.Default.Save();
+            }
+        }
+
+
     }
 }
