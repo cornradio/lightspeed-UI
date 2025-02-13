@@ -76,17 +76,26 @@ namespace Lightspeed_UI
         {
             Point cursorPos = Cursor.Position;
 
-            bool isAtTopEdge = cursorPos.Y <= 5; // 鼠标是否靠近顶部
-            bool isOnForm = this.Bounds.Contains(cursorPos); // 鼠标是否在窗口上
+            // 计算窗口水平范围
+            int formLeft = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
+            int formRight = formLeft + this.Width;
+
+            // 检查鼠标是否在窗口的水平范围内且靠近顶部
+            bool isAtTopEdge = cursorPos.Y <= 5 && cursorPos.X >= formLeft && cursorPos.X <= formRight;
+            bool isOnForm = this.Bounds.Contains(cursorPos);
 
             if (!isHidden && this.Top <= 0 && !isOnForm)
             {
-                hiddenY = -this.Height + 5; // 让窗口收起时仅露出 5 像素
-                StartAnimation(hiddenY); // 隐藏窗口
+                hiddenY = -this.Height + 5;
+                StartAnimation(hiddenY);
+                // 缩进时设置窗口置顶
+                this.TopMost = true;
             }
             else if (isHidden && (isAtTopEdge || isOnForm))
             {
-                StartAnimation(visibleY); // 显示窗口
+                StartAnimation(visibleY);
+                // 展开时取消置顶
+                this.TopMost = false;
             }
         }
 

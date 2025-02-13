@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.checkbox1 = new System.Windows.Forms.CheckBox();
             this.label_opacity = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -61,7 +60,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.linkLabel4);
             this.panel1.Controls.Add(this.trackBar1);
-            this.panel1.Controls.Add(this.linkLabel3);
             this.panel1.Controls.Add(this.checkbox1);
             this.panel1.Controls.Add(this.label_opacity);
             this.panel1.Controls.Add(this.linkLabel2);
@@ -85,7 +83,7 @@
             // 
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel4.Location = new System.Drawing.Point(7, 292);
+            this.linkLabel4.Location = new System.Drawing.Point(7, 270);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(137, 12);
             this.linkLabel4.TabIndex = 23;
@@ -96,7 +94,7 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(9, 172);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
@@ -105,18 +103,6 @@
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 50;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel3.Location = new System.Drawing.Point(7, 250);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(185, 12);
-            this.linkLabel3.TabIndex = 21;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "贴边自动隐藏工具(win + 方向键)";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // checkbox1
             // 
@@ -143,7 +129,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 272);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 250);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(77, 12);
             this.linkLabel2.TabIndex = 16;
@@ -256,7 +242,7 @@
             this.button6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button6.ForeColor = System.Drawing.Color.LightGray;
             this.button6.Location = new System.Drawing.Point(0, -1);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(38, 20);
             this.button6.TabIndex = 1;
@@ -274,7 +260,7 @@
             this.button7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button7.ForeColor = System.Drawing.Color.LightGray;
             this.button7.Location = new System.Drawing.Point(37, -1);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(38, 20);
             this.button7.TabIndex = 2;
@@ -292,7 +278,7 @@
             this.button8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button8.ForeColor = System.Drawing.Color.MintCream;
             this.button8.Location = new System.Drawing.Point(0, 18);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(38, 20);
             this.button8.TabIndex = 3;
@@ -310,7 +296,7 @@
             this.button9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button9.ForeColor = System.Drawing.Color.MintCream;
             this.button9.Location = new System.Drawing.Point(37, 18);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(38, 20);
             this.button9.TabIndex = 4;
@@ -358,7 +344,6 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label_opacity;
         private System.Windows.Forms.CheckBox checkbox1;
-        private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
