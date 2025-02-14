@@ -54,7 +54,7 @@ namespace Lightspeed_UI
                 this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, visibleY);
             }
 
-            visibleY = this.Top;
+            visibleY = 0;
             hiddenY = -this.Height + 5;
 
             checkMouseTimer = new Timer();
@@ -63,7 +63,7 @@ namespace Lightspeed_UI
             checkMouseTimer.Start();
 
             animationTimer = new Timer();
-            animationTimer.Interval = 10; // 10ms 刷新一次动画
+            animationTimer.Interval = 5; // 10ms 刷新一次动画
             animationTimer.Tick += AnimateWindow;
 
             label1.Text = "";
@@ -101,13 +101,11 @@ namespace Lightspeed_UI
             {
                 hiddenY = -this.Height + 5;
                 StartAnimation(hiddenY);
-                // 缩进时设置窗口置顶
                 this.TopMost = true;
             }
             else if (isHidden && (isAtTopEdge || isOnForm))
             {
-                StartAnimation(visibleY);
-                // 展开时取消置顶
+                StartAnimation(0);
                 this.TopMost = false;
             }
         }

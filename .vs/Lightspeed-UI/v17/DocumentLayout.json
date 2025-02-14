@@ -3,15 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Lightspeed-UI||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|c:\\users\\kasus\\documents\\github\\lightspeed-ui\\lightspeed-ui\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{EBB15E3E-9A62-4DC3-924F-AF3BFAD731AC}|Lightspeed-UI\\Lightspeed-UI.csproj|solutionrelative:lightspeed-ui\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,8 +28,7 @@
               "ToolTip": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Lightspeed-UI.csproj",
               "RelativeToolTip": "Lightspeed-UI\\Lightspeed-UI.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-13T12:40:00.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T12:40:00.349Z"
             },
             {
               "$type": "Document",
@@ -43,7 +38,7 @@
               "RelativeDocumentMoniker": "Lightspeed-UI\\Form1.cs",
               "ToolTip": "C:\\Users\\kasus\\Documents\\GitHub\\lightspeed-UI\\Lightspeed-UI\\Form1.cs",
               "RelativeToolTip": "Lightspeed-UI\\Form1.cs",
-              "ViewState": "AgIAAHgCAAAAAAAAAAAjwIYCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAvwD4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-01T03:03:13.333Z",
               "EditorCaption": ""
