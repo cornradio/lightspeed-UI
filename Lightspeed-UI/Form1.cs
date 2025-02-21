@@ -32,6 +32,9 @@ namespace Lightspeed_UI
         // 顶部间距
         public int tophieght = 56;
 
+        private DateTime mouseAtTopTime; // 记录鼠标到达顶部的时间
+        private bool isWaitingForDelay = false; // 是否正在等待延迟
+
         public Form1()
         {
             InitializeComponent();
@@ -83,6 +86,8 @@ namespace Lightspeed_UI
                 label1.ForeColor = Color.Red;
 
             }
+
+            mouseAtTopTime = DateTime.MinValue;
         }
 
         private void CheckMousePosition(object sender, EventArgs e)
@@ -102,11 +107,36 @@ namespace Lightspeed_UI
                 hiddenY = -this.Height + 5;
                 StartAnimation(hiddenY);
                 this.TopMost = true;
+                isWaitingForDelay = false;
+                Cursor.Current = Cursors.Default;
             }
-            else if (isHidden && (isAtTopEdge || isOnForm))
+            else if (isHidden && isAtTopEdge)
+            {
+                if (!isWaitingForDelay)
+                {
+                    mouseAtTopTime = DateTime.Now;
+                    isWaitingForDelay = true;
+                    Cursor.Current = Cursors.WaitCursor; // 显示等待光标
+                }
+                else if ((DateTime.Now - mouseAtTopTime).TotalSeconds >= 0.5)// 显示等待光标时间
+                {
+                    StartAnimation(0);
+                    this.TopMost = false;
+                    isWaitingForDelay = false;
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+            else if (isHidden && isOnForm)
             {
                 StartAnimation(0);
                 this.TopMost = false;
+                isWaitingForDelay = false;
+                Cursor.Current = Cursors.Default;
+            }
+            else
+            {
+                isWaitingForDelay = false;
+                Cursor.Current = Cursors.Default;
             }
         }
 
