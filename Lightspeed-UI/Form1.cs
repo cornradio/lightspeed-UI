@@ -98,13 +98,18 @@ namespace Lightspeed_UI
             int formLeft = this.Left;
             int formRight = this.Left + this.Width;
 
+            // 获取当前鼠标所在的屏幕
+            Screen currentScreen = Screen.FromPoint(cursorPos);
+            
             // 检查鼠标是否在窗口的水平范围内且靠近顶部
-            bool isAtTopEdge = cursorPos.Y <= 5 && cursorPos.X >= formLeft && cursorPos.X <= formRight;
+            bool isAtTopEdge = cursorPos.Y <= currentScreen.WorkingArea.Y + 5 && 
+                               cursorPos.X >= formLeft && 
+                               cursorPos.X <= formRight;
             bool isOnForm = this.Bounds.Contains(cursorPos);
 
-            if (!isHidden && this.Top <= 0 && !isOnForm)
+            if (!isHidden && this.Top <= currentScreen.WorkingArea.Y && !isOnForm)
             {
-                hiddenY = -this.Height + 5;
+                hiddenY = currentScreen.WorkingArea.Y - this.Height + 5;
                 StartAnimation(hiddenY);
                 this.TopMost = true;
                 isWaitingForDelay = false;
@@ -116,11 +121,11 @@ namespace Lightspeed_UI
                 {
                     mouseAtTopTime = DateTime.Now;
                     isWaitingForDelay = true;
-                    Cursor.Current = Cursors.WaitCursor; // 显示等待光标
+                    Cursor.Current = Cursors.WaitCursor;
                 }
-                else if ((DateTime.Now - mouseAtTopTime).TotalSeconds >= 0.5)// 显示等待光标时间
+                else if ((DateTime.Now - mouseAtTopTime).TotalSeconds >= 0.5)
                 {
-                    StartAnimation(0);
+                    StartAnimation(currentScreen.WorkingArea.Y); // 使用当前屏幕的顶部Y坐标
                     this.TopMost = false;
                     isWaitingForDelay = false;
                     Cursor.Current = Cursors.Default;
@@ -128,7 +133,7 @@ namespace Lightspeed_UI
             }
             else if (isHidden && isOnForm)
             {
-                StartAnimation(0);
+                StartAnimation(currentScreen.WorkingArea.Y); // 使用当前屏幕的顶部Y坐标
                 this.TopMost = false;
                 isWaitingForDelay = false;
                 Cursor.Current = Cursors.Default;
