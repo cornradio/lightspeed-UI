@@ -640,30 +640,10 @@ return
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // 保存窗口位置和大小
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                Settings.Default.WindowLeft = this.Left;
-                Settings.Default.WindowTop = this.Top;
-                Settings.Default.Save();
-            }
-
-            // 判断窗体关闭原因是否是用户点击关闭按钮
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                // 检查是否按住 Shift 键
-                if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
-                {
-                    // 按住 Shift 键时，允许关闭窗体
-                    e.Cancel = false;
-                }
-                else
-                {
-                    // 取消关闭操作
-                    e.Cancel = true;
-                    // 将窗体最小化
-                    this.WindowState = FormWindowState.Minimized;
-                }
+                e.Cancel = true; // 取消关闭操作
+                this.Hide(); // 执行 hide 操作
             }
         }
 
