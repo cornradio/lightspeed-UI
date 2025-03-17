@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -48,8 +49,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -241,7 +246,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button6.ForeColor = System.Drawing.Color.LightGray;
-            this.button6.Location = new System.Drawing.Point(0, -1);
+            this.button6.Location = new System.Drawing.Point(11, 8);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(38, 20);
@@ -259,7 +264,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button7.ForeColor = System.Drawing.Color.LightGray;
-            this.button7.Location = new System.Drawing.Point(37, -1);
+            this.button7.Location = new System.Drawing.Point(48, 8);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(38, 20);
@@ -277,7 +282,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button8.ForeColor = System.Drawing.Color.MintCream;
-            this.button8.Location = new System.Drawing.Point(0, 18);
+            this.button8.Location = new System.Drawing.Point(11, 27);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(38, 20);
@@ -295,7 +300,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button9.ForeColor = System.Drawing.Color.MintCream;
-            this.button9.Location = new System.Drawing.Point(37, 18);
+            this.button9.Location = new System.Drawing.Point(48, 27);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(38, 20);
@@ -305,6 +310,28 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.quitToolStripMenuItem.Text = "&Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -326,6 +353,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,6 +379,9 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
     }
 }
 

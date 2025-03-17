@@ -677,6 +677,22 @@ return
             }
         }
 
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (this.Visible)
+            {
+                this.Hide();
+            }
+            else
+            {
+                this.Show();
+                this.Activate();
+            }
+        }
     }
 }
