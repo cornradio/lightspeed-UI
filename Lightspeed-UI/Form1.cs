@@ -659,7 +659,7 @@ return
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
