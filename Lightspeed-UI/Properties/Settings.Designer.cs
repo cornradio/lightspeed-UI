@@ -70,5 +70,17 @@ namespace Lightspeed_UI.Properties {
                 this["WindowTop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autohide {
+            get {
+                return ((bool)(this["autohide"]));
+            }
+            set {
+                this["autohide"] = value;
+            }
+        }
     }
 }

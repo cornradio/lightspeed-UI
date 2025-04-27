@@ -79,6 +79,7 @@ namespace Lightspeed_UI
                 button4_Click(button4, EventArgs.Empty);
             }
 
+
             if (!Directory.Exists("c:/lightspeed"))
             {
                 OpenSettings(button4, EventArgs.Empty);
@@ -86,6 +87,8 @@ namespace Lightspeed_UI
                 label1.ForeColor = Color.Red;
 
             }
+
+
 
             mouseAtTopTime = DateTime.MinValue;
         }
@@ -172,6 +175,9 @@ namespace Lightspeed_UI
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Opacity = Settings.Default.opicity;
+
+
+
         }
         private void InitializeUI()
         {
@@ -442,6 +448,33 @@ open_or_activate(title, path) {
 !0::
 open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\0"")
 return
+!1::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\1"")
+return
+!2::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\2"")
+return
+!3::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\3"")
+return
+!4::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\4"")
+return
+!5::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\5"")
+return
+!6::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\6"")
+return
+!7::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\7"")
+return
+!8::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\8"")
+return
+!9::
+open_or_activate(""C:\lightspeed\0"",""C:\lightspeed\9"")
+return
 ";
 
             ahkContent += $"^!z::open_or_activate(\"lightspeed-UI\",\"{Assembly.GetExecutingAssembly().Location}\")" + "\n";
@@ -659,19 +692,60 @@ return
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Settings.Default.Save();
             Application.Exit();
         }
 
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (this.Visible)
+            if (e.Button == MouseButtons.Right)
             {
-                this.Hide();
+                // 只处理右键
+                // 你的右键逻辑，比如弹出菜单
+            }
+            if (e.Button == MouseButtons.Left)
+            {
+                if (this.Visible)
+                {
+                    this.Hide();
+                }
+                else
+                {
+                    this.Show();
+                    this.Activate();
+                }
+            }
+
+        }
+
+        private void refreashAhkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("lightspeed.ahk 已刷新");
+            button4_Click(button4, EventArgs.Empty);
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                Settings.Default.autohide = true;
+                Settings.Default.Save();
+
             }
             else
             {
-                this.Show();
-                this.Activate();
+                Settings.Default.autohide = false;
+                Settings.Default.Save();
+
+            }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            if (Settings.Default.autohide)
+            {
+                checkBox2.Checked = true;
+                this.Hide();
             }
         }
     }

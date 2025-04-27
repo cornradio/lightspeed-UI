@@ -52,6 +52,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreashAhkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -63,6 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.linkLabel4);
             this.panel1.Controls.Add(this.trackBar1);
             this.panel1.Controls.Add(this.checkbox1);
@@ -88,7 +91,7 @@
             // 
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel4.Location = new System.Drawing.Point(7, 270);
+            this.linkLabel4.Location = new System.Drawing.Point(7, 285);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(137, 12);
             this.linkLabel4.TabIndex = 23;
@@ -98,7 +101,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(9, 172);
+            this.trackBar1.Location = new System.Drawing.Point(9, 193);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
@@ -112,7 +115,7 @@
             // checkbox1
             // 
             this.checkbox1.AutoSize = true;
-            this.checkbox1.Location = new System.Drawing.Point(9, 154);
+            this.checkbox1.Location = new System.Drawing.Point(14, 154);
             this.checkbox1.Name = "checkbox1";
             this.checkbox1.Size = new System.Drawing.Size(78, 16);
             this.checkbox1.TabIndex = 20;
@@ -124,7 +127,7 @@
             // 
             this.label_opacity.AutoSize = true;
             this.label_opacity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_opacity.Location = new System.Drawing.Point(109, 177);
+            this.label_opacity.Location = new System.Drawing.Point(109, 198);
             this.label_opacity.Name = "label_opacity";
             this.label_opacity.Size = new System.Drawing.Size(47, 12);
             this.label_opacity.TabIndex = 18;
@@ -134,7 +137,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 250);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 265);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(77, 12);
             this.linkLabel2.TabIndex = 16;
@@ -146,7 +149,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(7, 228);
+            this.linkLabel1.Location = new System.Drawing.Point(7, 243);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(149, 12);
             this.linkLabel1.TabIndex = 15;
@@ -321,17 +324,38 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreashAhkToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // quitToolStripMenuItem
             // 
+            this.quitToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
+            // refreashAhkToolStripMenuItem
+            // 
+            this.refreashAhkToolStripMenuItem.Name = "refreashAhkToolStripMenuItem";
+            this.refreashAhkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreashAhkToolStripMenuItem.Text = "&Refreash ahk";
+            this.refreashAhkToolStripMenuItem.Click += new System.EventHandler(this.refreashAhkToolStripMenuItem_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(14, 172);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(108, 16);
+            this.checkBox2.TabIndex = 24;
+            this.checkBox2.Text = "启动时自动隐藏";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Form1
             // 
@@ -351,6 +375,7 @@
             this.Text = "lightspeed-UI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -383,6 +408,8 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreashAhkToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
