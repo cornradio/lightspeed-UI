@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.checkbox1 = new System.Windows.Forms.CheckBox();
@@ -51,9 +52,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreashAhkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -81,19 +81,33 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(90, 8);
+            this.panel1.Location = new System.Drawing.Point(135, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 472);
+            this.panel1.Size = new System.Drawing.Size(518, 708);
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(21, 258);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(160, 22);
+            this.checkBox2.TabIndex = 24;
+            this.checkBox2.Text = "启动时自动隐藏";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // linkLabel4
             // 
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel4.Location = new System.Drawing.Point(7, 285);
+            this.linkLabel4.Location = new System.Drawing.Point(10, 428);
+            this.linkLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(137, 12);
+            this.linkLabel4.Size = new System.Drawing.Size(206, 18);
             this.linkLabel4.TabIndex = 23;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "使用帮助和更新 github ";
@@ -101,12 +115,11 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(9, 193);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
+            this.trackBar1.Location = new System.Drawing.Point(14, 290);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 50;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(102, 45);
+            this.trackBar1.Size = new System.Drawing.Size(153, 69);
             this.trackBar1.TabIndex = 22;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 50;
@@ -115,9 +128,10 @@
             // checkbox1
             // 
             this.checkbox1.AutoSize = true;
-            this.checkbox1.Location = new System.Drawing.Point(14, 154);
+            this.checkbox1.Location = new System.Drawing.Point(21, 231);
+            this.checkbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkbox1.Name = "checkbox1";
-            this.checkbox1.Size = new System.Drawing.Size(78, 16);
+            this.checkbox1.Size = new System.Drawing.Size(115, 22);
             this.checkbox1.TabIndex = 20;
             this.checkbox1.Text = "ahk自启动";
             this.checkbox1.UseVisualStyleBackColor = true;
@@ -127,9 +141,10 @@
             // 
             this.label_opacity.AutoSize = true;
             this.label_opacity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_opacity.Location = new System.Drawing.Point(109, 198);
+            this.label_opacity.Location = new System.Drawing.Point(164, 297);
+            this.label_opacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_opacity.Name = "label_opacity";
-            this.label_opacity.Size = new System.Drawing.Size(47, 12);
+            this.label_opacity.Size = new System.Drawing.Size(71, 18);
             this.label_opacity.TabIndex = 18;
             this.label_opacity.Text = "opacity";
             // 
@@ -137,9 +152,10 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 265);
+            this.linkLabel2.Location = new System.Drawing.Point(10, 398);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(77, 12);
+            this.linkLabel2.Size = new System.Drawing.Size(116, 18);
             this.linkLabel2.TabIndex = 16;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "图标优化脚本";
@@ -149,9 +165,10 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(7, 243);
+            this.linkLabel1.Location = new System.Drawing.Point(10, 364);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(149, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(224, 18);
             this.linkLabel1.TabIndex = 15;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "下载依赖 ahkv1.exe (3MB)";
@@ -161,9 +178,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(109, 127);
+            this.label4.Location = new System.Drawing.Point(164, 190);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.Size = new System.Drawing.Size(80, 18);
             this.label4.TabIndex = 13;
             this.label4.Text = "活在升空";
             // 
@@ -171,9 +189,10 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(9, 118);
+            this.button4.Location = new System.Drawing.Point(14, 177);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 30);
+            this.button4.Size = new System.Drawing.Size(141, 45);
             this.button4.TabIndex = 12;
             this.button4.Text = "生成 + 启动";
             this.button4.UseVisualStyleBackColor = false;
@@ -183,18 +202,20 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(109, 91);
+            this.label3.Location = new System.Drawing.Point(164, 136);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(44, 18);
             this.label3.TabIndex = 11;
             this.label3.Text = "info";
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(9, 82);
+            this.button3.Location = new System.Drawing.Point(14, 123);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 30);
+            this.button3.Size = new System.Drawing.Size(141, 45);
             this.button3.TabIndex = 10;
             this.button3.Text = "启动 ahk";
             this.button3.UseVisualStyleBackColor = true;
@@ -204,18 +225,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(109, 55);
+            this.label2.Location = new System.Drawing.Point(164, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(44, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "info";
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(9, 46);
+            this.button2.Location = new System.Drawing.Point(14, 69);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 30);
+            this.button2.Size = new System.Drawing.Size(141, 45);
             this.button2.TabIndex = 8;
             this.button2.Text = "生成 ahk";
             this.button2.UseVisualStyleBackColor = true;
@@ -225,18 +248,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(109, 21);
+            this.label1.Location = new System.Drawing.Point(164, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 7;
             this.label1.Text = "info";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(9, 12);
+            this.button1.Location = new System.Drawing.Point(14, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 30);
+            this.button1.Size = new System.Drawing.Size(141, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "创建文件夹";
             this.button1.UseVisualStyleBackColor = true;
@@ -249,10 +274,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button6.ForeColor = System.Drawing.Color.LightGray;
-            this.button6.Location = new System.Drawing.Point(11, 8);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Location = new System.Drawing.Point(16, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(38, 20);
+            this.button6.Size = new System.Drawing.Size(57, 30);
             this.button6.TabIndex = 1;
             this.button6.Text = "< ";
             this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -267,10 +291,9 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button7.ForeColor = System.Drawing.Color.LightGray;
-            this.button7.Location = new System.Drawing.Point(48, 8);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Location = new System.Drawing.Point(72, 12);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(38, 20);
+            this.button7.Size = new System.Drawing.Size(57, 30);
             this.button7.TabIndex = 2;
             this.button7.Text = ">";
             this.button7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -285,10 +308,9 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button8.ForeColor = System.Drawing.Color.MintCream;
-            this.button8.Location = new System.Drawing.Point(11, 27);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Location = new System.Drawing.Point(16, 40);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(38, 20);
+            this.button8.Size = new System.Drawing.Size(57, 30);
             this.button8.TabIndex = 3;
             this.button8.Text = "+";
             this.button8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -303,10 +325,9 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button9.ForeColor = System.Drawing.Color.MintCream;
-            this.button9.Location = new System.Drawing.Point(48, 27);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
+            this.button9.Location = new System.Drawing.Point(72, 40);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(38, 20);
+            this.button9.Size = new System.Drawing.Size(57, 30);
             this.button9.TabIndex = 4;
             this.button9.Text = "-";
             this.button9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -325,49 +346,40 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreashAhkToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 64);
+            // 
+            // refreashAhkToolStripMenuItem
+            // 
+            this.refreashAhkToolStripMenuItem.Name = "refreashAhkToolStripMenuItem";
+            this.refreashAhkToolStripMenuItem.Size = new System.Drawing.Size(190, 30);
+            this.refreashAhkToolStripMenuItem.Text = "&Refreash ahk";
+            this.refreashAhkToolStripMenuItem.Click += new System.EventHandler(this.refreashAhkToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(190, 30);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
-            // refreashAhkToolStripMenuItem
-            // 
-            this.refreashAhkToolStripMenuItem.Name = "refreashAhkToolStripMenuItem";
-            this.refreashAhkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.refreashAhkToolStripMenuItem.Text = "&Refreash ahk";
-            this.refreashAhkToolStripMenuItem.Click += new System.EventHandler(this.refreashAhkToolStripMenuItem_Click);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(14, 172);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(108, 16);
-            this.checkBox2.TabIndex = 24;
-            this.checkBox2.Text = "启动时自动隐藏";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 586);
+            this.ClientSize = new System.Drawing.Size(1497, 879);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

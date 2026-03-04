@@ -483,15 +483,12 @@ open_or_activate(""C:\lightspeed\9"",""C:\lightspeed\9"")
 return
 ";
 
-            ahkContent += $"^!z::open_or_activate(\"lightspeed-UI\",\"{Assembly.GetExecutingAssembly().Location}\")" + "\n";
-
             var lightspeed_obj_list = LoadFolder2objList(folderPath);
             
             // Build help string for AHK
             StringBuilder sb = new StringBuilder();
             sb.Append("--- Hotkeys ---\\n");
             sb.Append("Alt+0~9 : Open Folders\\n");
-            sb.Append("Ctrl+Alt+Z : Show UI\\n");
             foreach (var item in lightspeed_obj_list)
             {
                 sb.Append($"{item.HotkeyStr} : {item.Title}\\n");
