@@ -12,14 +12,14 @@ windows quick launcher written in c# + using ahk for key binding
 前往右侧的 release 页面
 
 ## 使用帮助
-快捷键需要在鼠标点击桌面/任务栏之后  
-再按下触发  
-启动本窗口的快捷键： ↪ Ctrl+Alt+Z   
-lightspeed文件夹快捷键：↪ Alt + 0  
-打开程序的快捷： ↪ 数字 + 首字母  
-窗口导航：↪ Alt + 左右方向键  
+快捷键需要在鼠标点击桌面/任务栏之后按下触发  
+
+lightspeed文件夹快捷键：↪ Alt + 0~9
+打开程序的快捷： ↪ 0~9 + 快捷方式/文件夹首字母  
+窗口前进后退：↪ Alt + 左右方向键  
 刷新快捷键： F5  
 右键 - v - M 可以设置成大图标模式
+alt + / ： 快捷键列表查看
 
 ## 同类软件推荐
 https://github.com/Nigh/ahko
