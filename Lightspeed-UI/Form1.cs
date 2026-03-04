@@ -37,6 +37,16 @@ namespace Lightspeed_UI
 
         public Form1()
         {
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Contains("--help"))
+            {
+                string helpFile = Path.Combine(@"c:\lightspeed", "help.txt");
+                string helpContent = File.Exists(helpFile) ? File.ReadAllText(helpFile) : "No help info found. Please refresh AHK.";
+                HelpForm hf = new HelpForm(helpContent);
+                hf.ShowDialog();
+                Environment.Exit(0);
+            }
+
             InitializeComponent();
             InitializeUI();
 
@@ -377,21 +387,17 @@ namespace Lightspeed_UI
             if (!Directory.Exists(baseFolderPath))
             {
                 Directory.CreateDirectory(baseFolderPath);
-                for (int i = 0; i < 10; i++)
-                {
-                    string folderPath = Path.Combine(baseFolderPath, i.ToString());
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                }
-                label1.Text = ("文件夹创建完成！");
-            }
-            else
-            {
-                label1.Text = ("文件夹或许已存在?>无需创建");
             }
 
+            for (int i = 0; i < 10; i++)
+            {
+                string folderPath = Path.Combine(baseFolderPath, i.ToString());
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+            }
+            label1.Text = ("文件夹检查/创建完成！");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -480,6 +486,26 @@ return
             ahkContent += $"^!z::open_or_activate(\"lightspeed-UI\",\"{Assembly.GetExecutingAssembly().Location}\")" + "\n";
 
             var lightspeed_obj_list = LoadFolder2objList(folderPath);
+            
+            // Build help string for AHK
+            StringBuilder sb = new StringBuilder();
+            sb.Append("--- Hotkeys ---\\n");
+            sb.Append("Alt+0~9 : Open Folders\\n");
+            sb.Append("Ctrl+Alt+Z : Show UI\\n");
+            foreach (var item in lightspeed_obj_list)
+            {
+                sb.Append($"{item.HotkeyStr} : {item.Title}\\n");
+            }
+            // Use actual AHK backtick n for newlines when writing to the string
+            string helpStringText = sb.ToString();
+            File.WriteAllText(Path.Combine(folderPath, "help.txt"), helpStringText);
+
+            ahkContent += $@"
+!/::
+Run, ""{Assembly.GetExecutingAssembly().Location}"" --help
+return
+" + "\n";
+
             foreach (var item in lightspeed_obj_list)
             {
                 ahkContent += (item.getAhkString());
@@ -496,12 +522,13 @@ return
         {
             var lightspeed_obj_list = new List<lightspeed_obj>();
             var dubcheckList = new List<string>();
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var tf = folderPath + "\\" + i;
-                var files = Directory.GetFiles(tf);
+                if (!Directory.Exists(tf)) continue;
+                var entries = Directory.GetFileSystemEntries(tf);
 
-                foreach (var file in files)
+                foreach (var file in entries)
                 {
                     var hotkey = "";
                     var title = "";
