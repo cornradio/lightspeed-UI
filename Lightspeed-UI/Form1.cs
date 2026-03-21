@@ -760,7 +760,8 @@ return
                             StartProgram(fp); 
                     };
 
-                    PopulateTrayMenuRecursive(folderItem, folderPath);
+                    folderItem.DropDownItems.Add(new ToolStripMenuItem("Loading..."));
+                    folderItem.DropDownOpening += (s, ev) => LazyLoadMenu((ToolStripMenuItem)s);
 
                     contextMenuStrip1.Items.Add(folderItem);
                 }
@@ -775,58 +776,103 @@ return
             contextMenuStrip1.Items.Add(quitToolStripMenuItem);
         }
 
-        private void PopulateTrayMenuRecursive(ToolStripMenuItem parentMenu, string currentPath)
+        private void LazyLoadMenu(ToolStripMenuItem parentMenu)
         {
-            try
+            if (parentMenu.DropDownItems.Count == 1 && parentMenu.DropDownItems[0].Text == "Loading...")
             {
-                var entries = Directory.GetFileSystemEntries(currentPath);
-                foreach (var file in entries)
-                {
-                    if (Path.GetFileName(file) == "desktop.ini") continue;
+                parentMenu.DropDownItems.Clear();
+                string currentPath = parentMenu.Tag as string;
+                if (string.IsNullOrEmpty(currentPath)) return;
 
-                    string title = Path.GetFileNameWithoutExtension(file)
-                        .Replace(" - 快捷方式", "")
-                        .Replace(" - 副本", "");
-                        
-                    if (Path.GetFileName(file).StartsWith("["))
+                Type shellType = Type.GetTypeFromProgID("WScript.Shell");
+                dynamic shell = null;
+                if (shellType != null) {
+                    shell = Activator.CreateInstance(shellType);
+                }
+
+                try
+                {
+                    var entries = Directory.GetFileSystemEntries(currentPath);
+                    foreach (var file in entries)
                     {
-                        title = Path.GetFileName(file).Substring(3)
-                            .Replace(".lnk", "")
+                        if (Path.GetFileName(file).Equals("desktop.ini", StringComparison.OrdinalIgnoreCase)) continue;
+
+                        string title = Path.GetFileNameWithoutExtension(file)
                             .Replace(" - 快捷方式", "")
                             .Replace(" - 副本", "");
-                    }
-
-                    bool isDir = Directory.Exists(file);
-                    
-                    if (isDir)
-                    {
-                        var subFolderItem = new ToolStripMenuItem($"📁 {title}");
-                        subFolderItem.Tag = file;
-                        subFolderItem.Click += (s, ev) => {
-                            if (s is ToolStripMenuItem sub && sub.Tag is string fp)
-                                StartProgram(fp);
-                        };
                         
-                        parentMenu.DropDownItems.Add(subFolderItem);
-                        PopulateTrayMenuRecursive(subFolderItem, file); // Recurse into subdirectory
-                    }
-                    else
-                    {
-                        var subItem = new ToolStripMenuItem(title);
-                        subItem.Tag = file;
-                        subItem.Click += (s, ev) => {
-                            if (s is ToolStripMenuItem sub && sub.Tag is string path)
+                        if (Path.GetFileName(file).StartsWith("["))
+                        {
+                            title = Path.GetFileName(file).Substring(3)
+                                .Replace(".lnk", "")
+                                .Replace(" - 快捷方式", "")
+                                .Replace(" - 副本", "");
+                        }
+
+                        bool isDir = Directory.Exists(file);
+                        string targetPath = file;
+
+                        if (!isDir && file.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase))
+                        {
+                            try
                             {
-                                StartProgram(path);
+                                if (shell != null)
+                                {
+                                    var shortcut = shell.CreateShortcut(file);
+                                    string resolvedPath = shortcut.TargetPath;
+                                    
+                                    if (Directory.Exists(resolvedPath))
+                                    {
+                                        isDir = true;
+                                        targetPath = resolvedPath;
+                                    }
+                                }
                             }
-                        };
-                        parentMenu.DropDownItems.Add(subItem);
+                            catch { }
+                        }
+
+                        if (isDir)
+                        {
+                            var subFolderItem = new ToolStripMenuItem($"📁 {title}");
+                            subFolderItem.Tag = targetPath; // Using the real path for execution
+                            subFolderItem.Click += (s, ev) => {
+                                if (s is ToolStripMenuItem sub && sub.Tag is string fp)
+                                    StartProgram(fp);
+                            };
+                            
+                            subFolderItem.DropDownItems.Add(new ToolStripMenuItem("Loading..."));
+                            subFolderItem.DropDownOpening += (s, ev) => LazyLoadMenu((ToolStripMenuItem)s);
+                            
+                            parentMenu.DropDownItems.Add(subFolderItem);
+                        }
+                        else
+                        {
+                            var subItem = new ToolStripMenuItem(title);
+                            subItem.Tag = file;
+                            subItem.Click += (s, ev) => {
+                                if (s is ToolStripMenuItem sub && sub.Tag is string path)
+                                    StartProgram(path);
+                            };
+                            parentMenu.DropDownItems.Add(subItem);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error reading folder {currentPath}: {ex.Message}");
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error reading folder {currentPath}: {ex.Message}");
+                }
+                finally
+                {
+                    if (shell != null)
+                    {
+                        Marshal.ReleaseComObject(shell);
+                    }
+                }
+
+                if (parentMenu.DropDownItems.Count == 0)
+                {
+                    parentMenu.DropDownItems.Add(new ToolStripMenuItem("(Empty)"));
+                }
             }
         }
 
