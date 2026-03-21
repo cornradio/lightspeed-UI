@@ -185,9 +185,7 @@ namespace Lightspeed_UI
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Opacity = Settings.Default.opicity;
-
-
-
+            UpdateTrayMenu();
         }
         private void InitializeUI()
         {
@@ -512,7 +510,8 @@ return
             // Write the AHK script content to the file
             System.IO.File.WriteAllText(ahkFilePath, ahkContent, Encoding.GetEncoding("GBK"));
 
-
+            // Refresh the tray menu context
+            UpdateTrayMenu();
         }
 
         public List<lightspeed_obj> LoadFolder2objList(string folderPath)
@@ -740,6 +739,95 @@ return
                 }
             }
 
+        }
+
+        private void UpdateTrayMenu()
+        {
+            contextMenuStrip1.Items.Clear();
+
+            string baseFolderPath = @"c:/lightspeed";
+            if (Directory.Exists(baseFolderPath))
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    string folderPath = Path.Combine(baseFolderPath, i.ToString());
+                    if (!Directory.Exists(folderPath)) continue;
+
+                    var folderItem = new ToolStripMenuItem($"📁 {i}");
+                    folderItem.Tag = folderPath;
+                    folderItem.Click += (s, ev) => { 
+                        if (s is ToolStripMenuItem sub && sub.Tag is string fp) 
+                            Process.Start("explorer.exe", fp); 
+                    };
+
+                    PopulateTrayMenuRecursive(folderItem, folderPath);
+
+                    contextMenuStrip1.Items.Add(folderItem);
+                }
+            }
+
+            if (contextMenuStrip1.Items.Count > 0)
+            {
+                contextMenuStrip1.Items.Add(new ToolStripSeparator());
+            }
+
+            contextMenuStrip1.Items.Add(refreashAhkToolStripMenuItem);
+            contextMenuStrip1.Items.Add(quitToolStripMenuItem);
+        }
+
+        private void PopulateTrayMenuRecursive(ToolStripMenuItem parentMenu, string currentPath)
+        {
+            try
+            {
+                var entries = Directory.GetFileSystemEntries(currentPath);
+                foreach (var file in entries)
+                {
+                    if (Path.GetFileName(file) == "desktop.ini") continue;
+
+                    string title = Path.GetFileNameWithoutExtension(file)
+                        .Replace(" - 快捷方式", "")
+                        .Replace(" - 副本", "");
+                        
+                    if (Path.GetFileName(file).StartsWith("["))
+                    {
+                        title = Path.GetFileName(file).Substring(3)
+                            .Replace(".lnk", "")
+                            .Replace(" - 快捷方式", "")
+                            .Replace(" - 副本", "");
+                    }
+
+                    bool isDir = Directory.Exists(file);
+                    
+                    if (isDir)
+                    {
+                        var subFolderItem = new ToolStripMenuItem($"📁 {title}");
+                        subFolderItem.Tag = file;
+                        subFolderItem.Click += (s, ev) => {
+                            if (s is ToolStripMenuItem sub && sub.Tag is string fp)
+                                Process.Start("explorer.exe", fp);
+                        };
+                        
+                        parentMenu.DropDownItems.Add(subFolderItem);
+                        PopulateTrayMenuRecursive(subFolderItem, file); // Recurse into subdirectory
+                    }
+                    else
+                    {
+                        var subItem = new ToolStripMenuItem(title);
+                        subItem.Tag = file;
+                        subItem.Click += (s, ev) => {
+                            if (s is ToolStripMenuItem sub && sub.Tag is string path)
+                            {
+                                StartProgram(path);
+                            }
+                        };
+                        parentMenu.DropDownItems.Add(subItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading folder {currentPath}: {ex.Message}");
+            }
         }
 
         private void refreashAhkToolStripMenuItem_Click(object sender, EventArgs e)
