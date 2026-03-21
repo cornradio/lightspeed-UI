@@ -1,4 +1,4 @@
-﻿using Lightspeed_UI.Properties;
+using Lightspeed_UI.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -757,7 +757,7 @@ return
                     folderItem.Tag = folderPath;
                     folderItem.Click += (s, ev) => { 
                         if (s is ToolStripMenuItem sub && sub.Tag is string fp) 
-                            Process.Start("explorer.exe", fp); 
+                            StartProgram(fp); 
                     };
 
                     PopulateTrayMenuRecursive(folderItem, folderPath);
@@ -804,7 +804,7 @@ return
                         subFolderItem.Tag = file;
                         subFolderItem.Click += (s, ev) => {
                             if (s is ToolStripMenuItem sub && sub.Tag is string fp)
-                                Process.Start("explorer.exe", fp);
+                                StartProgram(fp);
                         };
                         
                         parentMenu.DropDownItems.Add(subFolderItem);
