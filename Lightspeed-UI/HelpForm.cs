@@ -30,6 +30,19 @@ namespace Lightspeed_UI
             };
             header.Controls.Add(title);
 
+            Panel searchPanel = new Panel { Dock = DockStyle.Top, Height = 35, BackColor = Color.FromArgb(30, 30, 30), Padding = new Padding(10, 5, 10, 5) };
+            TextBox searchBox = new TextBox
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.FromArgb(50, 50, 50),
+                ForeColor = Color.White,
+                BorderStyle = BorderStyle.FixedSingle,
+                Font = new Font("Segoe UI", 10f)
+            };
+            searchPanel.Controls.Add(searchBox);
+
+            string allText = helpText.Replace("`n", Environment.NewLine).Replace("\\n", Environment.NewLine);
+
             TextBox textBox = new TextBox
             {
                 Multiline = true,
@@ -39,8 +52,19 @@ namespace Lightspeed_UI
                 ForeColor = Color.FromArgb(200, 200, 200),
                 BorderStyle = BorderStyle.None,
                 Font = new Font("Consolas", 10.5f),
-                Text = helpText.Replace("`n", Environment.NewLine).Replace("\\n", Environment.NewLine),
+                Text = allText,
                 ScrollBars = ScrollBars.Vertical
+            };
+
+            // Add search filtering logic
+            searchBox.TextChanged += (s, e) => {
+                string filter = searchBox.Text.ToLower();
+                if (string.IsNullOrWhiteSpace(filter)) {
+                    textBox.Text = allText;
+                } else {
+                    var lines = allText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    textBox.Text = "--- Search Results ---\r\n" + string.Join(Environment.NewLine, lines.Where(l => l.ToLower().Contains(filter)));
+                }
             };
 
             Panel footer = new Panel { Dock = DockStyle.Bottom, Height = 50, BackColor = Color.FromArgb(30, 30, 30) };
@@ -57,14 +81,14 @@ namespace Lightspeed_UI
             footer.Controls.Add(closeBtn);
 
             this.Controls.Add(textBox);
+            this.Controls.Add(searchPanel);
             this.Controls.Add(header);
             this.Controls.Add(footer);
 
-            // Prevent default selection
+            // Set focus to the search box
             this.Load += (s, e) => {
-                textBox.SelectionStart = 0;
-                textBox.SelectionLength = 0;
-                closeBtn.Focus(); // Move focus to button to avoid selecting text
+                searchBox.Focus();
+                // Add a placeholder-like text to the search box via paint or just leave it empty
             };
 
             this.KeyDown += (s, e) => { if (e.KeyCode == Keys.Escape) this.Close(); };
