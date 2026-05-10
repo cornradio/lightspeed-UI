@@ -1,6 +1,15 @@
 # lightspeed-UI
 windows quick launcher written in c# + using ahk for key binding
 
+建议使用新版本： 
+
+https://github.com/cornradio/Lightspeed-wpf
+
+功能几乎与本程序一致，但是由于是自己重新实现的展示页面；所以一些 windows 自带的右键功能可能就没原来的那么好用。
+
+<img width="750" height="1200" alt="image" src="https://github.com/user-attachments/assets/5afec8cc-f77b-400a-b106-fe244726b281" />
+
+
 ## 软件介绍
 这是一个快速启动器,支持快速拖放新文件/快捷方式到快速文件夹，支持快捷键启动任意文件/快捷方式/文件夹    
 ![image](https://github.com/user-attachments/assets/1d57ca6a-220d-4c4a-82a2-2a83f4a6f08a)
